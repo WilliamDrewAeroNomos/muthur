@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document    : SimEvent1.xml
+    Created on  : October 6, 2010, 11:10 PM
+    Author      : wdrew
+    Description : Purpose of the document follows.
+-->
+
+<sim:simEventMessage xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+                     xmlns:sim='http://xml.metronaviation.com/schema/simlab'
+                     xsi:schemaLocation='http://xml.metronaviation.com/schema/simlab SimEvent.xsd'
+                     simTime="2006-06-23T15:59:23" simSource="NexSim">
+    
+    <sim:flightEvent xsi:type="sim:groundPositionEventType">
+        <sim:IDData>
+            <sim:acid>AAL101</sim:acid>
+            <sim:deptArptCode>JFK</sim:deptArptCode>
+            <sim:arrArptCode>ORD</sim:arrArptCode>
+            <sim:firstDeptTime>2006-06-23T15:50:00</sim:firstDeptTime>
+        </sim:IDData>
+        <sim:positionData>
+            <sim:latitudeDegrees>40.65</sim:latitudeDegrees>
+            <sim:longitudeDegrees>-73.72</sim:longitudeDegrees>
+            <sim:altitudeFt>11</sim:altitudeFt>
+            <sim:groundspeedKts>5</sim:groundspeedKts>
+            <sim:headingDegrees>90</sim:headingDegrees>
+        </sim:positionData>
+    </sim:flightEvent>
+
+    <sim:flightEvent xsi:type="sim:airPositionEventType">
+        <sim:IDData>
+            <sim:acid>AAL102</sim:acid>
+            <sim:deptArptCode>JFK</sim:deptArptCode>
+            <sim:arrArptCode>ORD</sim:arrArptCode>
+            <sim:firstDeptTime>2006-06-23T15:55:00</sim:firstDeptTime>
+        </sim:IDData>
+        <sim:positionData>
+            <sim:latitudeDegrees>42.65</sim:latitudeDegrees>
+            <sim:longitudeDegrees>-76.72</sim:longitudeDegrees>
+            <sim:altitudeFt>30000</sim:altitudeFt>
+            <sim:groundspeedKts>400</sim:groundspeedKts>
+            <sim:headingDegrees>90</sim:headingDegrees>
+            <sim:airspeedKts>444</sim:airspeedKts>
+            <sim:pitchDegrees>0.5</sim:pitchDegrees>
+            <sim:rollDegrees>0</sim:rollDegrees>
+            <sim:yawDegrees>0</sim:yawDegrees>
+            <sim:sector>ZOB48</sim:sector>
+            <sim:center>ZOB</sim:center>
+        </sim:positionData>
+    </sim:flightEvent>
+
+    <sim:flightEvent xsi:type="sim:flightPlanEventType">
+        <sim:IDData>
+            <sim:acid>AAL103</sim:acid>
+            <sim:deptArptCode>IND</sim:deptArptCode>
+            <sim:arrArptCode>BGR</sim:arrArptCode>
+            <sim:firstDeptTime>2006-06-23T16:00:00</sim:firstDeptTime>
+        </sim:IDData>
+        <sim:flightPlanData>
+            <sim:source>Flight</sim:source>
+            <sim:aircraftType>B777</sim:aircraftType>
+            <sim:deptTime>2006-06-23T16:00:00</sim:deptTime>
+            <sim:arrTime>2006-06-23T18:00:00</sim:arrTime>
+            <sim:cruiseSpeedKts>400</sim:cruiseSpeedKts>
+            <sim:cruiseAltitudeFt>330</sim:cruiseAltitudeFt>
+            <sim:route>IND..ROD.J29.PLB.J595.BGR..BGR</sim:route>
+            <sim:deptCenter>ZID</sim:deptCenter>
+            <sim:arrCenter>ZBW</sim:arrCenter>
+            <sim:deptFix>DEFIX</sim:deptFix>
+            <sim:arrFix>ARFIX</sim:arrFix>
+            <sim:physicalClass>J</sim:physicalClass>
+            <sim:weightClass>H</sim:weightClass>
+            <sim:userClass>C</sim:userClass>
+            <sim:numAircraft>1</sim:numAircraft>
+            <sim:airborneEquipmentQualifier>R</sim:airborneEquipmentQualifier>
+        </sim:flightPlanData>
+    </sim:flightEvent>
+
+    <sim:flightEvent xsi:type="sim:taxiOutEventType">
+        <sim:IDData>
+            <sim:acid>AAL104</sim:acid>
+            <sim:deptArptCode>IND</sim:deptArptCode>
+            <sim:arrArptCode>BGR</sim:arrArptCode>
+            <sim:firstDeptTime>2006-06-23T16:05:00</sim:firstDeptTime>
+        </sim:IDData>
+        <sim:taxiOutData>
+            <sim:taxiOutTime>2006-06-23T16:05:00</sim:taxiOutTime>
+        </sim:taxiOutData>
+    </sim:flightEvent>
+
+    <sim:flightEvent xsi:type="sim:arrivalEventType">
+        <sim:IDData>
+            <sim:acid>AAL105</sim:acid>
+            <sim:deptArptCode>IND</sim:deptArptCode>
+            <sim:arrArptCode>BGR</sim:arrArptCode>
+            <sim:firstDeptTime>2006-06-23T16:10:00</sim:firstDeptTime>
+        </sim:IDData>
+        <sim:arrivalData>
+            <sim:actualArrTime>2006-06-23T18:05:00</sim:actualArrTime>
+        </sim:arrivalData>
+    </sim:flightEvent>
+
+    <sim:flightEvent xsi:type="sim:cancelEventType">
+        <sim:IDData>
+            <sim:acid>AAL106</sim:acid>
+            <sim:deptArptCode>IND</sim:deptArptCode>
+            <sim:arrArptCode>BGR</sim:arrArptCode>
+            <sim:firstDeptTime>2006-06-23T16:15:00</sim:firstDeptTime>
+        </sim:IDData>
+        <sim:cancelData>
+            <sim:cancelTime>2006-06-23T16:15:00</sim:cancelTime>
+            <sim:cancellationFlag>RZ</sim:cancellationFlag>
+        </sim:cancelData>
+    </sim:flightEvent>
+
+    <sim:flightEvent xsi:type="sim:controlEventType">
+        <sim:IDData>
+            <sim:acid>AAL106</sim:acid>
+            <sim:deptArptCode>IND</sim:deptArptCode>
+            <sim:arrArptCode>BGR</sim:arrArptCode>
+            <sim:firstDeptTime>2006-06-23T16:20:00</sim:firstDeptTime>
+        </sim:IDData>
+        <sim:controlData>
+            <sim:controlType>GDP</sim:controlType>
+            <sim:controlElement>BGR</sim:controlElement>
+            <sim:controlledDeptTime>2006-06-23T16:45:00</sim:controlledDeptTime>
+            <sim:controlledArrTime>2006-06-23T18:20:00</sim:controlledArrTime>
+        </sim:controlData>
+    </sim:flightEvent>
+
+    <sim:flightEvent xsi:type="sim:summaryEventType">
+        <sim:IDData>
+            <sim:acid>AAL107</sim:acid>
+            <sim:deptArptCode>IND</sim:deptArptCode>
+            <sim:arrArptCode>BGR</sim:arrArptCode>
+            <sim:firstDeptTime>2006-06-23T16:25:00</sim:firstDeptTime>
+        </sim:IDData>
+        <sim:positionData xsi:type="sim:flightAirPositionType">
+            <sim:latitudeDegrees>42.65</sim:latitudeDegrees>
+            <sim:longitudeDegrees>-76.72</sim:longitudeDegrees>
+            <sim:altitudeFt>30000</sim:altitudeFt>
+            <sim:groundspeedKts>400</sim:groundspeedKts>
+            <sim:headingDegrees>90</sim:headingDegrees>
+            <sim:airspeedKts>444</sim:airspeedKts>
+            <sim:pitchDegrees>0.5</sim:pitchDegrees>
+            <sim:rollDegrees>0</sim:rollDegrees>
+            <sim:yawDegrees>0</sim:yawDegrees>
+            <sim:sector>ZOB48</sim:sector>
+            <sim:center>ZOB</sim:center>
+        </sim:positionData>
+        <sim:flightPlanData>
+            <sim:source>Flight</sim:source>
+            <sim:aircraftType>B777</sim:aircraftType>
+            <sim:deptTime>2006-06-23T16:00:00</sim:deptTime>
+            <sim:arrTime>2006-06-23T18:00:00</sim:arrTime>
+            <sim:cruiseSpeedKts>400</sim:cruiseSpeedKts>
+            <sim:cruiseAltitudeFt>330</sim:cruiseAltitudeFt>
+            <sim:route>IND..ROD.J29.PLB.J595.BGR..BGR</sim:route>
+            <sim:deptCenter>ZID</sim:deptCenter>
+            <sim:arrCenter>ZBW</sim:arrCenter>
+            <sim:deptFix>DEFIX</sim:deptFix>
+            <sim:arrFix>ARFIX</sim:arrFix>
+            <sim:physicalClass>J</sim:physicalClass>
+            <sim:weightClass>H</sim:weightClass>
+            <sim:userClass>C</sim:userClass>
+            <sim:numAircraft>1</sim:numAircraft>
+            <sim:airborneEquipmentQualifier>R</sim:airborneEquipmentQualifier>
+        </sim:flightPlanData>
+        <sim:taxiOutData>
+            <sim:taxiOutTime>2006-06-23T16:05:00</sim:taxiOutTime>
+        </sim:taxiOutData>
+        <sim:departureData>
+            <sim:actualDeptTime>2006-06-23T16:45:00</sim:actualDeptTime>
+        </sim:departureData>
+        <sim:controlData>
+            <sim:controlType>GDP</sim:controlType>
+            <sim:controlElement>BGR</sim:controlElement>
+            <sim:controlledDeptTime>2006-06-23T16:45:00</sim:controlledDeptTime>
+            <sim:controlledArrTime>2006-06-23T18:20:00</sim:controlledArrTime>
+        </sim:controlData>
+    </sim:flightEvent>
+</sim:simEventMessage>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- regular spring configuration file defining the beans for this bundle. 
+		The configuration of OSGi definitions is kept in a separate configuration 
+		file so that this file can easily be used for integration testing outside 
+		of an OSGi environment -->
+
+	<bean name="registrationRequestHandler"
+		class="com.csc.muthur.server.eventserver.internal.RegistrationRequestEventHandler">
+		<property name="registrationServer" ref="registrationService" />
+		<property name="objectService" ref="objectService" />
+		<property name="ownershipService" ref="ownershipService" />
+		<property name="federationService" ref="federationService" />
+		<property name="modelService" ref="modelService" />
+		<property name="commonsService" ref="commonsService" />
+		<property name="federationExecutionModelService" ref="federationExecutionModelService" />
+	</bean>
+
+	<bean name="joinFederationRequestHandler"
+		class="com.csc.muthur.server.eventserver.internal.JoinFederationRequestHandler">
+		<property name="registrationServer" ref="registrationService" />
+		<property name="objectService" ref="objectService" />
+		<property name="ownershipService" ref="ownershipService" />
+		<property name="federationService" ref="federationService" />
+		<property name="modelService" ref="modelService" />
+		<property name="commonsService" ref="commonsService" />
+		<property name="federationExecutionModelService" ref="federationExecutionModelService" />
+	</bean>
+
+	<bean name="listFedExecModelsRequestHandler"
+		class="com.csc.muthur.server.eventserver.internal.ListFedExecModelsRequestHandler">
+		<property name="registrationServer" ref="registrationService" />
+		<property name="objectService" ref="objectService" />
+		<property name="ownershipService" ref="ownershipService" />
+		<property name="federationService" ref="federationService" />
+		<property name="modelService" ref="modelService" />
+		<property name="commonsService" ref="commonsService" />
+		<property name="federationExecutionModelService" ref="federationExecutionModelService" />
+	</bean>
+
+	<bean name="dataSubscriptionRequestHandler"
+		class="com.csc.muthur.server.eventserver.internal.DataSubscriptionRequestHandler">
+		<property name="registrationServer" ref="registrationService" />
+		<property name="objectService" ref="objectService" />
+		<property name="ownershipService" ref="ownershipService" />
+		<property name="federationService" ref="federationService" />
+		<property name="modelService" ref="modelService" />
+		<property name="commonsService" ref="commonsService" />
+		<property name="federationExecutionModelService" ref="federationExecutionModelService" />
+	</bean>
+
+	<bean name="readyToRunRequestHandler"
+		class="com.csc.muthur.server.eventserver.internal.ReadyToRunRequestHandler">
+		<property name="registrationServer" ref="registrationService" />
+		<property name="objectService" ref="objectService" />
+		<property name="ownershipService" ref="ownershipService" />
+		<property name="federationService" ref="federationService" />
+		<property name="modelService" ref="modelService" />
+		<property name="commonsService" ref="commonsService" />
+		<property name="federationExecutionModelService" ref="federationExecutionModelService" />
+	</bean>
+
+	<bean name="dataPublicationHandler"
+		class="com.csc.muthur.server.eventserver.internal.DataPublicationHandler">
+		<property name="registrationServer" ref="registrationService" />
+		<property name="objectService" ref="objectService" />
+		<property name="ownershipService" ref="ownershipService" />
+		<property name="federationService" ref="federationService" />
+		<property name="modelService" ref="modelService" />
+		<property name="commonsService" ref="commonsService" />
+		<property name="federationExecutionModelService" ref="federationExecutionModelService" />
+	</bean>
+
+	<bean name="terminateFederationEventHandler"
+		class="com.csc.muthur.server.eventserver.internal.TerminateFederationEventHandler">
+		<property name="registrationServer" ref="registrationService" />
+		<property name="objectService" ref="objectService" />
+		<property name="ownershipService" ref="ownershipService" />
+		<property name="federationService" ref="federationService" />
+		<property name="modelService" ref="modelService" />
+		<property name="commonsService" ref="commonsService" />
+		<property name="federationExecutionModelService" ref="federationExecutionModelService" />
+		<property name="timeService" ref="timeService" />
+	</bean>
+
+	<bean name="federateDeregistrationEventHandler"
+		class="com.csc.muthur.server.eventserver.internal.FederateDeregistrationEventHandler">
+		<property name="registrationServer" ref="registrationService" />
+		<property name="objectService" ref="objectService" />
+		<property name="ownershipService" ref="ownershipService" />
+		<property name="federationService" ref="federationService" />
+		<property name="modelService" ref="modelService" />
+		<property name="commonsService" ref="commonsService" />
+		<property name="federationExecutionModelService" ref="federationExecutionModelService" />
+		<property name="routerService" ref="routerService" />
+	</bean>
+
+	<bean name="startFederationRequestHandler"
+		class="com.csc.muthur.server.eventserver.internal.StartFederationRequestHandler">
+		<property name="registrationServer" ref="registrationService" />
+		<property name="objectService" ref="objectService" />
+		<property name="ownershipService" ref="ownershipService" />
+		<property name="federationService" ref="federationService" />
+		<property name="modelService" ref="modelService" />
+		<property name="commonsService" ref="commonsService" />
+		<property name="federationExecutionModelService" ref="federationExecutionModelService" />
+	</bean>
+
+	<bean name="pauseFederationRequestHandler"
+		class="com.csc.muthur.server.eventserver.internal.PauseFederationRequestHandler">
+		<property name="registrationServer" ref="registrationService" />
+		<property name="objectService" ref="objectService" />
+		<property name="ownershipService" ref="ownershipService" />
+		<property name="federationService" ref="federationService" />
+		<property name="modelService" ref="modelService" />
+		<property name="commonsService" ref="commonsService" />
+		<property name="federationExecutionModelService" ref="federationExecutionModelService" />
+	</bean>
+
+	<bean name="resumeFederationRequestHandler"
+		class="com.csc.muthur.server.eventserver.internal.ResumeFederationRequestHandler">
+		<property name="registrationServer" ref="registrationService" />
+		<property name="objectService" ref="objectService" />
+		<property name="ownershipService" ref="ownershipService" />
+		<property name="federationService" ref="federationService" />
+		<property name="modelService" ref="modelService" />
+		<property name="commonsService" ref="commonsService" />
+		<property name="federationExecutionModelService" ref="federationExecutionModelService" />
+	</bean>
+
+	<!-- Update/modify federation execution time -->
+
+	<bean name="updateFederationExecutionTimeRequestHandler"
+		class="com.csc.muthur.server.eventserver.internal.UpdateFederationExecutionTimeRequestHandler">
+		<property name="federationService" ref="federationService" />
+		<property name="modelService" ref="modelService" />
+	</bean>
+
+	<bean name="defaultEventHandler"
+		class="com.csc.muthur.server.eventserver.internal.DefaultEventHandler">
+	</bean>
+
+</beans>

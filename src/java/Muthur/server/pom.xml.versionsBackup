@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<artifactId>muthur</artifactId>
+		<groupId>com.csc.muthur</groupId>
+		<version>2.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>server</artifactId>
+	<packaging>pom</packaging>
+	<name>Muthur - Server</name>
+
+	<modules>
+		<module>commons</module>
+		<module>configuration</module>
+		<module>mocks</module>
+		<module>model</module>
+		<module>object</module>
+		<module>ownership</module>
+		<module>registration</module>
+		<module>federation</module>
+		<module>router</module>
+		<module>time</module>
+		<module>eventserver</module>
+	</modules>
+
+</project>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<simEventMessage xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+                     simTime="2006-06-23T15:59:23" simSource="Frasca">
+    
+    <flightEvent xsi:type="groundPositionEventType">
+        <IDData>
+            <acid>AAL101</acid>
+            <deptArptCode>JFK</deptArptCode>
+            <arrArptCode>ORD</arrArptCode>
+            <firstDeptTime>2006-06-23T15:50:00</firstDeptTime>
+        </IDData>
+        <positionData>
+            <latitudeDegrees>40.65</latitudeDegrees>
+            <longitudeDegrees>-73.72</longitudeDegrees>
+            <altitudeFt>11</altitudeFt>
+            <groundspeedKts>5</groundspeedKts>
+            <headingDegrees>90</headingDegrees>
+        </positionData>
+    </flightEvent>
+
+    <flightEvent xsi:type="airPositionEventType">
+        <IDData>
+            <acid>AAL102</acid>
+            <deptArptCode>JFK</deptArptCode>
+            <arrArptCode>ORD</arrArptCode>
+            <firstDeptTime>2006-06-23T15:55:00</firstDeptTime>
+        </IDData>
+        <positionData>
+            <latitudeDegrees>42.65</latitudeDegrees>
+            <longitudeDegrees>-76.72</longitudeDegrees>
+            <altitudeFt>30000</altitudeFt>
+            <groundspeedKts>400</groundspeedKts>
+            <headingDegrees>90</headingDegrees>
+            <airspeedKts>444</airspeedKts>
+            <pitchDegrees>0.5</pitchDegrees>
+            <rollDegrees>0</rollDegrees>
+            <yawDegrees>0</yawDegrees>
+            <sector>ZOB48</sector>
+            <center>ZOB</center>
+        </positionData>
+    </flightEvent>
+
+    <flightEvent xsi:type="flightPlanEventType">
+        <IDData>
+            <acid>AAL103</acid>
+            <deptArptCode>IND</deptArptCode>
+            <arrArptCode>BGR</arrArptCode>
+            <firstDeptTime>2006-06-23T16:00:00</firstDeptTime>
+        </IDData>
+        <flightPlanData>
+            <source>Flight</source>
+            <aircraftType>B777</aircraftType>
+            <deptTime>2006-06-23T16:00:00</deptTime>
+            <arrTime>2006-06-23T18:00:00</arrTime>
+            <cruiseSpeedKts>400</cruiseSpeedKts>
+            <cruiseAltitudeFt>330</cruiseAltitudeFt>
+            <route>IND..ROD.J29.PLB.J595.BGR..BGR</route>
+            <deptCenter>ZID</deptCenter>
+            <arrCenter>ZBW</arrCenter>
+            <deptFix>DEFIX</deptFix>
+            <arrFix>ARFIX</arrFix>
+            <physicalClass>J</physicalClass>
+            <weightClass>H</weightClass>
+            <userClass>C</userClass>
+            <numAircraft>1</numAircraft>
+            <airborneEquipmentQualifier>R</airborneEquipmentQualifier>
+        </flightPlanData>
+    </flightEvent>
+
+    <flightEvent xsi:type="taxiOutEventType">
+        <IDData>
+            <acid>AAL104</acid>
+            <deptArptCode>IND</deptArptCode>
+            <arrArptCode>BGR</arrArptCode>
+            <firstDeptTime>2006-06-23T16:05:00</firstDeptTime>
+        </IDData>
+        <taxiOutData>
+            <taxiOutTime>2006-06-23T16:05:00</taxiOutTime>
+        </taxiOutData>
+    </flightEvent>
+
+    <flightEvent xsi:type="arrivalEventType">
+        <IDData>
+            <acid>AAL105</acid>
+            <deptArptCode>IND</deptArptCode>
+            <arrArptCode>BGR</arrArptCode>
+            <firstDeptTime>2006-06-23T16:10:00</firstDeptTime>
+        </IDData>
+        <arrivalData>
+            <actualArrTime>2006-06-23T18:05:00</actualArrTime>
+        </arrivalData>
+    </flightEvent>
+
+    <flightEvent xsi:type="cancelEventType">
+        <IDData>
+            <acid>AAL106</acid>
+            <deptArptCode>IND</deptArptCode>
+            <arrArptCode>BGR</arrArptCode>
+            <firstDeptTime>2006-06-23T16:15:00</firstDeptTime>
+        </IDData>
+        <cancelData>
+            <cancelTime>2006-06-23T16:15:00</cancelTime>
+            <cancellationFlag>RZ</cancellationFlag>
+        </cancelData>
+    </flightEvent>
+
+    <flightEvent xsi:type="controlEventType">
+        <IDData>
+            <acid>AAL106</acid>
+            <deptArptCode>IND</deptArptCode>
+            <arrArptCode>BGR</arrArptCode>
+            <firstDeptTime>2006-06-23T16:20:00</firstDeptTime>
+        </IDData>
+        <controlData>
+            <controlType>GDP</controlType>
+            <controlElement>BGR</controlElement>
+            <controlledDeptTime>2006-06-23T16:45:00</controlledDeptTime>
+            <controlledArrTime>2006-06-23T18:20:00</controlledArrTime>
+        </controlData>
+    </flightEvent>
+
+    <flightEvent xsi:type="summaryEventType">
+        <IDData>
+            <acid>AAL107</acid>
+            <deptArptCode>IND</deptArptCode>
+            <arrArptCode>BGR</arrArptCode>
+            <firstDeptTime>2006-06-23T16:25:00</firstDeptTime>
+        </IDData>
+        <positionData xsi:type="flightAirPositionType">
+            <latitudeDegrees>42.65</latitudeDegrees>
+            <longitudeDegrees>-76.72</longitudeDegrees>
+            <altitudeFt>30000</altitudeFt>
+            <groundspeedKts>400</groundspeedKts>
+            <headingDegrees>90</headingDegrees>
+            <airspeedKts>444</airspeedKts>
+            <pitchDegrees>0.5</pitchDegrees>
+            <rollDegrees>0</rollDegrees>
+            <yawDegrees>0</yawDegrees>
+            <sector>ZOB48</sector>
+            <center>ZOB</center>
+        </positionData>
+        <flightPlanData>
+            <source>Flight</source>
+            <aircraftType>B777</aircraftType>
+            <deptTime>2006-06-23T16:00:00</deptTime>
+            <arrTime>2006-06-23T18:00:00</arrTime>
+            <cruiseSpeedKts>400</cruiseSpeedKts>
+            <cruiseAltitudeFt>330</cruiseAltitudeFt>
+            <route>IND..ROD.J29.PLB.J595.BGR..BGR</route>
+            <deptCenter>ZID</deptCenter>
+            <arrCenter>ZBW</arrCenter>
+            <deptFix>DEFIX</deptFix>
+            <arrFix>ARFIX</arrFix>
+            <physicalClass>J</physicalClass>
+            <weightClass>H</weightClass>
+            <userClass>C</userClass>
+            <numAircraft>1</numAircraft>
+            <airborneEquipmentQualifier>R</airborneEquipmentQualifier>
+        </flightPlanData>
+        <taxiOutData>
+            <taxiOutTime>2006-06-23T16:05:00</taxiOutTime>
+        </taxiOutData>
+        <departureData>
+            <actualDeptTime>2006-06-23T16:45:00</actualDeptTime>
+        </departureData>
+        <controlData>
+            <controlType>GDP</controlType>
+            <controlElement>BGR</controlElement>
+            <controlledDeptTime>2006-06-23T16:45:00</controlledDeptTime>
+            <controlledArrTime>2006-06-23T18:20:00</controlledArrTime>
+        </controlData>
+    </flightEvent>
+</simEventMessage>

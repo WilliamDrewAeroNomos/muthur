@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.csc.muthur</groupId>
+	<artifactId>muthur</artifactId>
+	<version>2.3-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>Muthur</name>
+	<url>http://www.csc.com/nexsim</url>
+
+	<properties>
+
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<slf4j.version>1.6.1</slf4j.version>
+		<logback.classic.version>1.0.13</logback.classic.version>
+		<spring.osgi.version>1.1.0</spring.osgi.version>
+		<commons.collections.version>3.2.1</commons.collections.version>
+		<felix.prefs.version>1.0.4</felix.prefs.version>
+		<osgi.compendium.version>1.2.0</osgi.compendium.version>
+		<springframework.osgi.version>3.8.2-SNAPSHOT
+		</springframework.osgi.version>
+		<spring.fuse.version>3.0.5.RELEASE</spring.fuse.version>
+		<server.deploy.dir>${env.ATCLOUD_LOCATION}</server.deploy.dir>
+		<deploy.dir.location>${server.deploy.dir}/atcloud-smx-${project.version}/deploy</deploy.dir.location>
+		<artifact-repo-address-port>mitchell:8081</artifact-repo-address-port>
+
+		<!-- ATCloud properties -->
+
+		<derby.db.version>10.8.2.2</derby.db.version>
+		<openjpa.version>2.2.2</openjpa.version>
+
+	</properties>
+
+	<!-- Profiles -->
+
+	<profiles>
+
+		<profile>
+			<id>windows</id>
+			<activation>
+				<os>
+					<name>Windows XP</name>
+					<family>Windows</family>
+					<arch>x86</arch>
+					<version>5.1.2600</version>
+				</os>
+			</activation>
+			<properties>
+				<custom-smx-type>zip</custom-smx-type>
+				<script-extension>.bat</script-extension>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>win64</id>
+			<activation>
+				<os>
+					<family>windows</family>
+					<name>Windows 7</name>
+					<arch>x86</arch>
+				</os>
+			</activation>
+			<properties>
+				<custom-smx-type>zip</custom-smx-type>
+				<script-extension>.bat</script-extension>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>unix</id>
+			<activation>
+				<os>
+					<family>unix</family>
+				</os>
+			</activation>
+			<properties>
+				<custom-smx-type>tar.gz</custom-smx-type>
+				<script-extension />
+			</properties>
+		</profile>
+
+		<!-- development environment -->
+		<profile>
+			<id>development</id>
+			<properties>
+				<!-- TODO: -->
+			</properties>
+		</profile>
+		<!-- CI environment -->
+		<profile>
+			<id>continuous-integration</id>
+			<properties>
+				<!-- TODO: -->
+			</properties>
+		</profile>
+	</profiles>
+
+	<!-- Issue management -->
+
+	<issueManagement>
+		<system>FogBugz</system>
+		<url>http://10.10.10.21</url>
+	</issueManagement>
+
+	<!-- Development team -->
+
+	<developers>
+
+		<developer>
+			<id>wdrew</id>
+			<name>William Drew</name>
+			<email>wdrew@csc.com</email>
+			<roles>
+				<role>Project Manager</role>
+				<role>Architect</role>
+			</roles>
+			<organization>CSC</organization>
+			<timezone>-5</timezone>
+		</developer>
+
+		<developer>
+			<id>kmoore</id>
+			<name>Kenneth Moore</name>
+			<email>kmoorejr@csc.com</email>
+			<roles>
+				<role>Lead Software Engineer</role>
+			</roles>
+			<organization>CSC</organization>
+			<timezone>-5</timezone>
+		</developer>
+
+		<developer>
+			<id>rbroadwater</id>
+			<name>Rebecca Broadwater</name>
+			<email>rbroadwater2@csc.com</email>
+			<roles>
+				<role>Software Engineer</role>
+			</roles>
+			<organization>CSC</organization>
+			<timezone>-5</timezone>
+		</developer>
+
+		<developer>
+			<id>fguo</id>
+			<name>Feng Guo</name>
+			<email>fguo2@csc.com</email>
+			<roles>
+				<role>Software Engineer</role>
+			</roles>
+			<organization>CSC</organization>
+			<timezone>-5</timezone>
+		</developer>
+
+	</developers>
+
+	<!-- Mailing lists -->
+
+	<mailingLists>
+		<mailingList>
+			<name>Muthur project mailing list</name>
+			<subscribe>dev-subscribe@muthur.com</subscribe>
+			<unsubscribe>dev-unsubscribe@muthur.com</unsubscribe>
+			<post>support@atcloud.com</post>
+			<archive>http://mail-archives.muthur.com/modmbox/dev/</archive>
+		</mailingList>
+	</mailingLists>
+
+	<!-- Distribution management -->
+
+	<distributionManagement>
+	
+		<repository>
+			<id>muthur-release-local</id>
+			<name>muthur-release-local</name>
+			<url>http://${artifact-repo-address-port}/artifactory/muthur-release-local/</url>
+		</repository>
+		
+		<snapshotRepository>
+			<id>muthur-snapshot-local</id>
+			<name>muthur-snapshot-local</name>
+			<url>http://${artifact-repo-address-port}/artifactory/muthur-snapshot-local/</url>
+		</snapshotRepository>
+		
+	</distributionManagement>
+
+	<repositories>
+
+		<repository>
+			<id>central</id>
+			<url> http://${artifact-repo-address-port}/artifactory/libs-release </url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+
+		<repository>
+			<id>snapshots</id>
+			<url> http://${artifact-repo-address-port}/artifactory/libs-snapshot </url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+		</repository>
+
+	</repositories>
+
+	<pluginRepositories>
+
+		<pluginRepository>
+			<id>central</id>
+			<url> http://${artifact-repo-address-port}/artifactory/plugins-release </url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+
+		<pluginRepository>
+			<id>snapshots</id>
+			<url> http://${artifact-repo-address-port}/artifactory/plugins-snapshot </url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+		</pluginRepository>
+
+	</pluginRepositories>
+
+	<!-- SCM -->
+
+	<!-- <scm> -->
+	<!-- <developerConnection>scm:svn:svn://192.168.1.99/nexsim/tags/muthur-2.0 -->
+	<!-- </developerConnection> -->
+	<!-- <connection>scm:svn:svn://192.168.1.99/nexsim/tags/muthur-2.0</connection> -->
+	<!-- </scm> -->
+
+	<!-- Build -->
+
+	<build>
+
+		<pluginManagement>
+
+			<plugins>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>2.1</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.9</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-scm-plugin</artifactId>
+					<version>1.2</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-eclipse-plugin</artifactId>
+					<version>2.7</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-checkstyle-plugin</artifactId>
+					<version>2.3</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>2.4.2</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.felix</groupId>
+					<artifactId>maven-bundle-plugin</artifactId>
+					<version>1.4.0</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>findbugs-maven-plugin</artifactId>
+					<version>2.1</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>exec-maven-plugin</artifactId>
+					<version>1.1.1</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>2.4.2</version>
+				</plugin>
+
+			</plugins>
+
+		</pluginManagement>
+
+	</build>
+
+	<!-- Reporting -->
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.9.1</version>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>findbugs-maven-plugin</artifactId>
+				<version>2.5.2</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>2.10</version>
+			</plugin>
+		</plugins>
+	</reporting>
+
+	<!-- Dependency management -->
+
+	<dependencyManagement>
+
+		<dependencies>
+
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-simple</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>jcl-over-slf4j</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>com.springsource.org.apache.commons.logging</artifactId>
+				<version>1.1.1</version>
+			</dependency>
+
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.7</version>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.activation</groupId>
+				<artifactId>activation</artifactId>
+				<version>1.1.1</version>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.mail</groupId>
+				<artifactId>mail</artifactId>
+				<version>1.4.1</version>
+			</dependency>
+
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-classic</artifactId>
+				<version>${logback.classic.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>commons-collections</groupId>
+				<artifactId>commons-collections</artifactId>
+				<version>${commons.collections.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>net.sourceforge.cglib</groupId>
+				<artifactId>com.springsource.net.sf.cglib</artifactId>
+				<version>2.2.0</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.servicemix</groupId>
+				<artifactId>org.apache.servicemix.bundles.jdom</artifactId>
+				<version>1.2_2</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>org.apache.felix.configadmin</artifactId>
+				<version>1.2.4</version>
+			</dependency>
+
+			<!-- Start Muthur dependencies -->
+
+			<dependency>
+				<groupId>com.csc.muthur</groupId>
+				<artifactId>com.csc.muthur.server.commons</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.csc.muthur</groupId>
+				<artifactId>com.csc.muthur.server.configuration</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.csc.muthur</groupId>
+				<artifactId>com.csc.muthur.server.model</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.csc.muthur</groupId>
+				<artifactId>com.csc.muthur.server.registration</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.csc.muthur</groupId>
+				<artifactId>com.csc.muthur.server.federation</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.csc.muthur</groupId>
+				<artifactId>com.csc.muthur.server.mocks</artifactId>
+				<version>${project.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.csc.muthur</groupId>
+				<artifactId>com.csc.muthur.server.object</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.csc.muthur</groupId>
+				<artifactId>com.csc.muthur.server.ownership</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.csc.muthur</groupId>
+				<artifactId>com.csc.muthur.server.router</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.csc.muthur</groupId>
+				<artifactId>com.csc.muthur.server.time</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.csc.muthur</groupId>
+				<artifactId>branding.shell</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<!-- end Muthur dependencies -->
+
+			<!-- ATCloud -->
+
+			<dependency>
+				<groupId>com.atcloud</groupId>
+				<artifactId>license</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.atcloud</groupId>
+				<artifactId>commons</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.atcloud</groupId>
+				<artifactId>fem</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.atcloud</groupId>
+				<artifactId>model</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.atcloud</groupId>
+				<artifactId>metrics</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<!-- Derby DB -->
+
+			<dependency>
+				<groupId>org.apache.derby</groupId>
+				<artifactId>derby</artifactId>
+				<version>${derby.db.version}</version>
+			</dependency>
+
+			<!-- OpenJPA -->
+
+			<dependency>
+				<groupId>org.apache.openjpa</groupId>
+				<artifactId>openjpa-all</artifactId>
+				<version>${openjpa.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.openjpa</groupId>
+				<artifactId>openjpa</artifactId>
+				<version>${openjpa.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+
+		</dependencies>
+
+	</dependencyManagement>
+
+	<!-- Dependencies -->
+
+	<dependencies>
+
+		<dependency>
+			<groupId>net.sourceforge.cglib</groupId>
+			<artifactId>com.springsource.net.sf.cglib</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>com.springsource.org.apache.commons.logging</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.activation</groupId>
+			<artifactId>activation</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>org.springframework.context.support</artifactId>
+			<version>${spring.fuse.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>org.springframework.context</artifactId>
+			<version>${spring.fuse.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>org.springframework.jms</artifactId>
+			<version>3.0.3.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>org.springframework.beans</artifactId>
+			<version>3.0.3.RELEASE</version>
+		</dependency>
+
+		<!-- ActiveMQ -->
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-core</artifactId>
+			<version>5.4.0</version>
+		</dependency>
+		<!-- End of ActiveMQ -->
+
+		<!-- JDOM - version used in ServiceMix -->
+		<dependency>
+			<groupId>org.apache.servicemix.bundles</groupId>
+			<artifactId>org.apache.servicemix.bundles.jdom</artifactId>
+			<version>1.1_2</version>
+		</dependency>
+		<!-- End of JDOM -->
+
+		<!-- EasyMock -->
+		<dependency>
+			<groupId>org.easymock</groupId>
+			<artifactId>easymock</artifactId>
+			<version>3.0</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- End of EasyMock -->
+
+		<!-- MySQL -->
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate</artifactId>
+			<version>3.2.5.ga</version>
+			<exclusions>
+				<exclusion>
+					<groupId>javax.transaction</groupId>
+					<artifactId>jta</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.apache.felix.configadmin</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.osgi</groupId>
+			<artifactId>org.springframework.osgi.core</artifactId>
+			<version>1.2.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.thoughtworks.xstream</groupId>
+			<artifactId>com.springsource.com.thoughtworks.xstream</artifactId>
+			<version>1.3.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>org.springframework.test</artifactId>
+			<version>3.0.6.RELEASE</version>
+		</dependency>
+
+	</dependencies>
+
+	<modules>
+		<module>server</module>
+		<module>container</module>
+	</modules>
+
+</project>

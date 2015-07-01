@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:osgi="http://www.springframework.org/schema/osgi"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                      http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd">
+
+	<!-- definitions using elements of the osgi namespace can be included in 
+		this file. There is no requirement to keep these definitions in a separate 
+		file if you do not want to. The rationale for keeping these definitions separate 
+		is to facilitate integration testing of the bundle outside of an OSGi container -->
+
+	<osgi:service id="eventServiceId" ref="eventService"
+		interface="com.csc.muthur.server.eventserver.EventService">
+	</osgi:service>
+
+	<osgi:reference id="registrationService"
+		interface="com.csc.muthur.server.registration.RegistrationService" />
+
+	<osgi:reference id="federationService"
+		interface="com.csc.muthur.server.federation.FederationService" />
+
+	<osgi:reference id="routerService"
+		interface="com.csc.muthur.server.router.RouterService" />
+
+	<osgi:reference id="modelService"
+		interface="com.csc.muthur.server.model.ModelService" />
+
+	<osgi:reference id="configurationService"
+		interface="com.csc.muthur.server.configuration.ConfigurationService" />
+
+	<osgi:reference id="objectService"
+		interface="com.csc.muthur.server.object.ObjectService" />
+
+	<osgi:reference id="ownershipService"
+		interface="com.csc.muthur.server.ownership.OwnershipService" />
+
+	<osgi:reference id="commonsService"
+		interface="com.csc.muthur.server.commons.CommonsService" />
+
+	<osgi:reference id="timeService"
+		interface="com.csc.muthur.server.time.TimeService" />
+
+	<osgi:reference id="federationExecutionModelService"
+		interface="com.atcloud.fem.FederationExecutionModelService" />
+
+</beans>

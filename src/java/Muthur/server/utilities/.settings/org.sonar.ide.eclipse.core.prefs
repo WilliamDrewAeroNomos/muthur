@@ -1,0 +1,9 @@
+analyseLocally=false
+eclipse.preferences.version=1
+extraProperties=
+projectArtifactId=utilities
+projectBranch=
+projectGroupId=com.csc.muthur
+projectKey=com.csc.muthur\:com.csc.muthur.utilities
+serverUrl=http\://192.168.1.199\:9000
+version=2

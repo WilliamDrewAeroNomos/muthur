@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simEventMessage xmlns="http://xml.metronaviation.com/schema/esb/simevent"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" simTime="2011-01-31T18:28:2"
+	simSource="NexSim">
+	<sim:flightEvent xmlns:sim="http://xml.metronaviation.com/schema/esb/simevent"
+		xsi:type="sim:summaryEventType">
+		<sim:IDData>
+			<sim:acid>EJA711</sim:acid>
+			<sim:deptArptCode>JAN</sim:deptArptCode>
+			<sim:arrArptCode>BTR</sim:arrArptCode>
+			<sim:firstDeptTime>2011-01-31T23:01:00</sim:firstDeptTime>
+		</sim:IDData>
+		<sim:positionData>
+			<sim:latitudeDegrees>32.3106002653916</sim:latitudeDegrees>
+			<sim:longitudeDegrees>-90.07880001775864</sim:longitudeDegrees>
+			<sim:altitudeFt>346.0</sim:altitudeFt>
+			<sim:groundSpeedKts>0.0</sim:groundSpeedKts>
+			<sim:airspeedKts>0.0</sim:airspeedKts>
+			<sim:headingDegrees>3.1999998092651367</sim:headingDegrees>
+			<sim:pitchDegrees>0.0</sim:pitchDegrees>
+			<sim:rollDegrees>0.0</sim:rollDegrees>
+			<sim:yawDegrees>0.0</sim:yawDegrees>
+			<sim:sector />
+			<sim:center />
+		</sim:positionData>
+		<sim:flightPlanData>
+			<sim:source />
+			<sim:aircraftType />
+			<sim:firstDeptTime>2011-01-31T23:01:00</sim:firstDeptTime>
+			<sim:arrTime />
+			<sim:cruiseSpeedKts>0.0</sim:cruiseSpeedKts>
+			<sim:cruiseAltitudeFt>0.0</sim:cruiseAltitudeFt>
+			<sim:route>JAN.V245.TALPY..HEZ..BTR</sim:route>
+			<sim:deptCenter />
+			<sim:arrCenter />
+			<sim:deptFix />
+			<sim:arrFix>ÍÍÍÍÍÍÍÍÍÍ</sim:arrFix>
+			<sim:physicalClass />
+			<sim:userClass />
+			<sim:weightClass />
+			<sim:numAircraft>1</sim:numAircraft>
+			<sim:airbourneEquipmentQualifer>1</sim:airbourneEquipmentQualifer>
+		</sim:flightPlanData>
+		<sim:taxiOutData>
+			<sim:taxiOutTime />
+		</sim:taxiOutData>
+		<sim:departureData>
+			<sim:actualDeptTime />
+		</sim:departureData>
+		<sim:controlData>
+			<sim:controlType />
+		</sim:controlData>
+	</sim:flightEvent>
+</simEventMessage>

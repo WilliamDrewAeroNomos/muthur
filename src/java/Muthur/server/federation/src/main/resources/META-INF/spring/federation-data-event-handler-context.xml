@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- CRUD Object handlers -->
+
+	<bean name="createObjectRequestHandler"
+		class="com.csc.muthur.server.federation.internal.handler.CreateObjectRequestHandler">
+		<property name="registrationService" ref="registrationService" />
+		<property name="modelService" ref="modelService" />
+		<property name="federationService" ref="federationService" />
+		<property name="objectService" ref="objectService" />
+		<property name="commonsService" ref="commonsService" />
+		<property name="ownershipService" ref="ownershipService" />
+		<property name="routerService" ref="routerService" />
+	</bean>
+
+	<bean name="createOrUpdateObjectRequestHandler"
+		class="com.csc.muthur.server.federation.internal.handler.CreateOrUpdateObjectRequestHandler">
+		<property name="registrationService" ref="registrationService" />
+		<property name="modelService" ref="modelService" />
+		<property name="federationService" ref="federationService" />
+		<property name="objectService" ref="objectService" />
+		<property name="ownershipService" ref="ownershipService" />
+		<property name="commonsService" ref="commonsService" />
+		<property name="routerService" ref="routerService" />
+	</bean>
+
+	<bean name="readObjectRequestHandler"
+		class="com.csc.muthur.server.federation.internal.handler.ReadObjectRequestHandler">
+		<property name="objectService" ref="objectService" />
+		<property name="commonsService" ref="commonsService" />
+		<property name="routerService" ref="routerService" />
+	</bean>
+
+	<bean name="updateObjectRequestHandler"
+		class="com.csc.muthur.server.federation.internal.handler.UpdateObjectRequestHandler">
+		<property name="registrationService" ref="registrationService" />
+		<property name="modelService" ref="modelService" />
+		<property name="federationService" ref="federationService" />
+		<property name="commonsService" ref="commonsService" />
+		<property name="ownershipService" ref="ownershipService" />
+		<property name="objectService" ref="objectService" />
+		<property name="routerService" ref="routerService" />
+	</bean>
+
+	<bean name="updateObjectAccessControlHandler"
+		class="com.csc.muthur.server.federation.internal.handler.UpdateObjectAccessControlRequestHandler">
+		<property name="registrationService" ref="registrationService" />
+		<property name="modelService" ref="modelService" />
+		<property name="federationService" ref="federationService" />
+		<property name="ownershipService" ref="ownershipService" />
+		<property name="objectService" ref="objectService" />
+		<property name="commonsService" ref="commonsService" />
+		<property name="routerService" ref="routerService" />
+	</bean>
+
+	<bean name="deleteObjectRequestHandler"
+		class="com.csc.muthur.server.federation.internal.handler.DeleteObjectRequestHandler">
+		<property name="registrationService" ref="registrationService" />
+		<property name="modelService" ref="modelService" />
+		<property name="federationService" ref="federationService" />
+		<property name="objectService" ref="objectService" />
+		<property name="ownershipService" ref="ownershipService" />
+		<property name="commonsService" ref="commonsService" />
+		<property name="routerService" ref="routerService" />
+	</bean>
+
+	<!-- Ownership -->
+
+	<bean name="transferObjectOwnershipRequestHandler"
+		class="com.csc.muthur.server.federation.internal.handler.TransferObjectOwnershipRequestHandler">
+		<property name="registrationService" ref="registrationService" />
+		<property name="modelService" ref="modelService" />
+		<property name="federationService" ref="federationService" />
+		<property name="objectService" ref="objectService" />
+		<property name="ownershipService" ref="ownershipService" />
+		<property name="commonsService" ref="commonsService" />
+		<property name="routerService" ref="routerService" />
+	</bean>
+
+	<!-- Request to transfer ownership -->
+
+	<bean name="transferObjectOwnershipResponseHandler"
+		class="com.csc.muthur.server.federation.internal.handler.TransferObjectOwnershipResponseHandler">
+		<property name="registrationService" ref="registrationService" />
+		<property name="objectService" ref="objectService" />
+		<property name="ownershipService" ref="ownershipService" />
+		<property name="federationService" ref="federationService" />
+		<property name="modelService" ref="modelService" />
+		<property name="commonsService" ref="commonsService" />
+		<property name="routerService" ref="routerService" />
+	</bean>
+
+	<!-- Request to relinquish ownership -->
+
+	<bean name="relinquishObjectOwnershipRequestHandler"
+		class="com.csc.muthur.server.federation.internal.handler.RelinquishObjectOwnershipRequestHandler">
+		<property name="registrationService" ref="registrationService" />
+		<property name="modelService" ref="modelService" />
+		<property name="federationService" ref="federationService" />
+		<property name="objectService" ref="objectService" />
+		<property name="ownershipService" ref="ownershipService" />
+		<property name="commonsService" ref="commonsService" />
+		<property name="routerService" ref="routerService" />
+	</bean>
+
+</beans>

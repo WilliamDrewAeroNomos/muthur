@@ -1,0 +1,10 @@
+analyseLocally=true
+eclipse.preferences.version=1
+extraProperties=
+lastAnalysisDate=1383593837677
+projectArtifactId=eventserver
+projectBranch=
+projectGroupId=com.csc.muthur
+projectKey=com.csc.muthur\:com.csc.muthur.server.eventserver
+serverUrl=http\://localhost\:9000
+version=2

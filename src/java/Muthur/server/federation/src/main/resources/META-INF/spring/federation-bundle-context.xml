@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- regular spring configuration file defining the beans for this bundle. 
+		The configuration of OSGi definitions is kept in a separate configuration 
+		file so that this file can easily be used for integration testing outside 
+		of an OSGi environment -->
+
+	<bean name="dataEventHandlerFactory"
+		class="com.csc.muthur.server.federation.internal.datachannel.DataEventHandlerFactoryImpl">
+	</bean>
+
+	<bean name="dataEventFactory"
+		class="com.csc.muthur.server.federation.internal.datachannel.DataEventFactoryImpl">
+	</bean>
+
+	<bean name="dataChannelListener"
+		class="com.csc.muthur.server.federation.internal.datachannel.FederationDataChannelListener">
+		<property name="dataEventHandlerFactory" ref="dataEventHandlerFactory" />
+		<property name="dataEventFactory" ref="dataEventFactory" />
+		<property name="federationService" ref="federationService" />
+	</bean>
+
+	<bean name="dataChannelListenerFactory"
+		class="com.csc.muthur.server.federation.internal.datachannel.FederationDataChannelListenerFactory">
+		<property name="dataChannelListener" ref="dataChannelListener" />
+	</bean>
+
+	<bean name="federationDataChannelServer"
+		class="com.csc.muthur.server.federation.internal.datachannel.FederationDataChannelServerImpl">
+		<property name="dataChannelListenerFactory" ref="dataChannelListenerFactory" />
+		<property name="portNumber" value="44444" />
+	</bean>
+
+	<bean name="federationService"
+		class="com.csc.muthur.server.federation.internal.execution.FederationServiceImpl"
+		init-method="start" destroy-method="stop">
+		<property name="registrationService" ref="registrationService" />
+		<property name="routerService" ref="routerService" />
+		<property name="configurationService" ref="configurationService" />
+		<property name="modelService" ref="modelService" />
+		<property name="timeService" ref="timeService" />
+		<property name="objectService" ref="objectService" />
+		<property name="commonsService" ref="commonsService" />
+		<property name="metricsService" ref="metricsService" />
+		<property name="federationExecutionModelService" ref="federationExecutionModelService" />
+		<property name="federationDataChannelServer" ref="federationDataChannelServer" />
+	</bean>
+
+</beans>

@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<artifactId>muthur</artifactId>
+		<groupId>com.csc.muthur</groupId>
+		<version>2.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>container</artifactId>
+	<packaging>pom</packaging>
+	<name>Muthur - Container</name>
+
+	<dependencyManagement>
+
+		<dependencies>
+
+			<!-- ServiceMix - required for constructing a custom SMX -->
+
+			<dependency>
+				<groupId>org.apache.servicemix</groupId>
+				<artifactId>apache-servicemix</artifactId>
+				<version>4.5.1</version>
+				<type>tar.gz</type>
+			</dependency>
+
+		</dependencies>
+
+	</dependencyManagement>
+
+	<modules>
+		<module>shell</module>
+		<module>custom-smx</module>
+		<module>install-smx</module>
+	</modules>
+
+</project>

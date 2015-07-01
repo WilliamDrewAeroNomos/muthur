@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<artifactId>server</artifactId>
+		<groupId>com.csc.muthur</groupId>
+		<version>2.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>com.csc.muthur.subscription</artifactId>
+	<packaging>bundle</packaging>
+	<name>Muthur - Subscription Service</name>
+
+	<url>http://www.csc.com/nexsim</url>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+			<resource>
+				<directory>.</directory>
+				<includes>
+					<include>plugin.xml</include>
+					<include>META-INF/*</include>
+				</includes>
+			</resource>
+		</resources>
+		<plugins>
+
+			<!-- deploy bundle to container (uncomment this to deploy bundle) -->
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-dependency-plugin</artifactId> 
+				<executions> <execution> <id>fuse-deploy</id> <phase>install</phase> <goals> 
+				<goal>copy</goal> </goals> <configuration> <artifactItems> <artifactItem> 
+				<groupId>${project.groupId}</groupId> <artifactId>${project.artifactId}</artifactId> 
+				<version>${project.version}</version> </artifactItem> </artifactItems> <outputDirectory>../../Fuse/deploy</outputDirectory> 
+				<overWriteSnapshots>true</overWriteSnapshots> <failOnWarning>false</failOnWarning> 
+				</configuration> </execution> </executions> </plugin> -->
+
+			<!-- build bundle -->
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>1.4.0</version>
+				<extensions>true</extensions>
+				<configuration>
+					<manifestLocation>META-INF</manifestLocation>
+					<instructions>
+						<Export-Package>com.csc.muthur.subscription</Export-Package>
+						<Private-Package>com.csc.muthur.subscription.internal</Private-Package>
+						<Import-Package>*</Import-Package>
+						<Include-Resource>{maven-resources}, src/main/resources</Include-Resource>
+						<Bundle-ClassPath>.</Bundle-ClassPath>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+
+		<!-- start Muthur dependencies -->
+
+		<dependency>
+			<groupId>com.csc.muthur</groupId>
+			<artifactId>com.csc.muthur.model</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.csc.muthur</groupId>
+			<artifactId>com.csc.muthur.commons</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.csc.muthur</groupId>
+			<artifactId>com.csc.muthur.configuration</artifactId>
+		</dependency>
+
+		<!-- end Muthur dependencies -->
+
+	</dependencies>
+
+</project>

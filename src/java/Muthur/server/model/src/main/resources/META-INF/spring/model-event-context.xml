@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!--
+		regular spring configuration file defining the beans for this bundle.
+		The configuration of OSGi definitions is kept in a separate
+		configuration file so that this file can easily be used for
+		integration testing outside of an OSGi environment
+	-->
+
+	<!-- Request/Response -->
+
+	<!-- FederateRegistrationRequest/Response -->
+
+	<bean name="FederateRegistrationRequest"
+		class="com.csc.muthur.server.model.event.request.FederateRegistrationRequest"
+		scope="prototype">
+		<property name="handler" value="registrationRequestEventHandler" />
+		<property name="timeToLiveSecs" value="30" />
+	</bean>
+
+	<bean name="FederateRegistrationResponse"
+		class="com.csc.muthur.server.model.event.response.FederateRegistrationResponse"
+		scope="prototype">
+	</bean>
+
+	<!-- ListFedExecModelsRequest/Response -->
+
+	<bean name="ListFedExecModelsRequest"
+		class="com.csc.muthur.server.model.event.request.ListFedExecModelsRequest"
+		scope="prototype">
+		<property name="handler" value="listFedExecModelsRequestHandler" />
+		<property name="timeToLiveSecs" value="30" />
+	</bean>
+
+	<bean name="ListFedExecModelsResponse"
+		class="com.csc.muthur.server.model.event.response.ListFedExecModelsResponse"
+		scope="prototype">
+	</bean>
+
+	<!-- JoinFederationRequest/Response -->
+
+	<bean name="JoinFederationRequest"
+		class="com.csc.muthur.server.model.event.request.JoinFederationRequest"
+		scope="prototype">
+		<property name="handler" value="joinFederationRequestHandler" />
+	</bean>
+
+	<bean name="JoinFederationResponse"
+		class="com.csc.muthur.server.model.event.response.JoinFederationResponse"
+		scope="prototype">
+	</bean>
+
+	<!-- RegisterPublicationRequest/Response -->
+
+	<bean name="RegisterPublicationRequest"
+		class="com.csc.muthur.server.model.event.request.RegisterPublicationRequest"
+		scope="prototype">
+		<property name="handler" value="registerPublicationRequestHandler" />
+	</bean>
+
+	<bean name="RegisterPublicationResponse"
+		class="com.csc.muthur.server.model.event.response.RegisterPublicationResponse"
+		scope="prototype">
+	</bean>
+
+	<!-- DataSubscriptionRequest/Response -->
+
+	<bean name="DataSubscriptionRequest"
+		class="com.csc.muthur.server.model.event.request.DataSubscriptionRequest"
+		scope="prototype">
+		<property name="handler" value="dataSubscriptionRequestHandler" />
+	</bean>
+
+	<bean name="DataSubscriptionResponse"
+		class="com.csc.muthur.server.model.event.response.DataSubscriptionResponse"
+		scope="prototype">
+	</bean>
+
+	<!-- ReadyToRunRequest/Response -->
+
+	<bean name="ReadyToRunRequest" class="com.csc.muthur.server.model.event.request.ReadyToRunRequest"
+		scope="prototype">
+		<property name="handler" value="readyToRunRequestHandler" />
+	</bean>
+
+	<bean name="ReadyToRunResponse"
+		class="com.csc.muthur.server.model.event.response.ReadyToRunResponse" scope="prototype">
+	</bean>
+
+	<bean name="FederationTerminationEvent" class="com.csc.muthur.server.model.event.FederationTerminationEvent"
+		scope="prototype">
+		<property name="handler" value="terminateFederationHandler" />
+	</bean>
+
+	<bean name="FederateDeregistrationEvent"
+		class="com.csc.muthur.server.model.event.FederateDeregistrationEvent" scope="prototype">
+		<property name="handler" value="federateDeregistrationEventHandler" />
+	</bean>
+
+	<bean name="FederateHeartbeatEvent" class="com.csc.muthur.server.model.event.FederateHeartbeatEvent"
+		scope="prototype">
+	</bean>
+
+	<bean name="FederateStateEvent" class="com.csc.muthur.server.model.event.FederateStateEvent"
+		scope="prototype">
+	</bean>
+
+	<bean name="DataPublicationEvent" class="com.csc.muthur.server.model.event.DataPublicationEvent"
+		scope="prototype">
+		<property name="handler" value="dataPublicationHandler" />
+	</bean>
+
+	<bean name="TimeManagementRequest"
+		class="com.csc.muthur.server.model.event.request.TimeManagementRequest"
+		scope="prototype">
+	</bean>
+
+	<!-- PauseFederationRequest/Response -->
+
+	<bean name="PauseFederationRequest"
+		class="com.csc.muthur.server.model.event.request.PauseFederationRequest"
+		scope="prototype">
+	</bean>
+
+	<bean name="PauseFederationResponse"
+		class="com.csc.muthur.server.model.event.response.PauseFederationResponse"
+		scope="prototype">
+	</bean>
+
+	<!-- ResumeFederationRequest/Response -->
+
+	<bean name="ResumeFederationRequest"
+		class="com.csc.muthur.server.model.event.request.ResumeFederationRequest"
+		scope="prototype">
+	</bean>
+
+	<bean name="ResumeFederationResponse"
+		class="com.csc.muthur.server.model.event.response.ResumeFederationResponse"
+		scope="prototype">
+	</bean>
+
+	<!-- StartFederationRequest/Response -->
+
+	<bean name="StartFederationRequest"
+		class="com.csc.muthur.server.model.event.request.StartFederationRequest"
+		scope="prototype">
+	</bean>
+
+	<bean name="StartFederationResponse"
+		class="com.csc.muthur.server.model.event.response.StartFederationResponse"
+		scope="prototype">
+	</bean>
+
+	<!-- CreateObjectRequest/Response -->
+
+	<bean name="CreateObjectRequest"
+		class="com.csc.muthur.server.model.event.request.CreateObjectRequest" scope="prototype">
+	</bean>
+
+	<bean name="CreateObjectResponse"
+		class="com.csc.muthur.server.model.event.response.CreateObjectResponse"
+		scope="prototype">
+	</bean>
+
+	<!-- ReadObjectRequest/Response -->
+
+	<bean name="ReadObjectRequest" class="com.csc.muthur.server.model.event.request.ReadObjectRequest"
+		scope="prototype">
+	</bean>
+
+	<bean name="ReadObjectResponse"
+		class="com.csc.muthur.server.model.event.response.ReadObjectResponse" scope="prototype">
+	</bean>
+
+	<!-- UpdateObjectRequest/Response -->
+
+	<bean name="UpdateObjectRequest"
+		class="com.csc.muthur.server.model.event.request.UpdateObjectRequest" scope="prototype">
+	</bean>
+
+	<bean name="UpdateObjectResponse"
+		class="com.csc.muthur.server.model.event.response.UpdateObjectResponse"
+		scope="prototype">
+	</bean>
+
+	<!-- DeleteObjectRequest/Response -->
+
+	<bean name="DeleteObjectRequest"
+		class="com.csc.muthur.server.model.event.request.DeleteObjectRequest" scope="prototype">
+	</bean>
+
+	<bean name="DeleteObjectResponse"
+		class="com.csc.muthur.server.model.event.response.DeleteObjectResponse"
+		scope="prototype">
+	</bean>
+
+	<!-- Ownership -->
+
+	<bean name="ObjectOwnershipRelinquishedEvent"
+		class="com.csc.muthur.server.model.event.ObjectOwnershipRelinquishedEvent"
+		scope="prototype">
+	</bean>
+
+	<bean name="RelinquishObjectOwnershipRequest"
+		class="com.csc.muthur.server.model.event.request.RelinquishObjectOwnershipRequest"
+		scope="prototype">
+	</bean>
+
+	<bean name="RelinquishObjectOwnershipResponse"
+		class="com.csc.muthur.server.model.event.response.RelinquishObjectOwnershipResponse"
+		scope="prototype">
+	</bean>
+
+	<bean name="TransferObjectOwnershipRequest"
+		class="com.csc.muthur.server.model.event.request.TransferObjectOwnershipRequest"
+		scope="prototype">
+	</bean>
+
+	<bean name="TransferObjectOwnershipResponse"
+		class="com.csc.muthur.server.model.event.response.TransferObjectOwnershipResponse"
+		scope="prototype">
+	</bean>
+
+	<bean name="UpdateObjectAccessControlRequest"
+		class="com.csc.muthur.server.model.event.request.UpdateObjectAccessControlRequest"
+		scope="prototype">
+	</bean>
+
+	<bean name="UpdateObjectAccessControlResponse"
+		class="com.csc.muthur.server.model.event.response.UpdateObjectAccessControlResponse"
+		scope="prototype">
+	</bean>
+
+
+	<bean name="UpdateFederationExecutionTimeRequest"
+		class="com.csc.muthur.server.model.event.request.UpdateFederationExecutionTimeRequest"
+		scope="prototype">
+	</bean>
+
+	<bean name="UpdateFederationExecutionTimeResponse"
+		class="com.csc.muthur.server.model.event.response.UpdateFederationExecutionTimeResponse"
+		scope="prototype">
+	</bean>
+	<!--
+		General error response used to cover all errors not covered by
+		standard event error handling
+	-->
+	<bean name="GeneralErrorResponse"
+		class="com.csc.muthur.server.model.event.response.GeneralErrorResponse"
+		scope="prototype">
+	</bean>
+
+</beans>

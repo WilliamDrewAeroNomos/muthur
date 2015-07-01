@@ -1,0 +1,9 @@
+analyseLocally=true
+eclipse.preferences.version=1
+extraProperties=
+projectArtifactId=registration
+projectBranch=
+projectGroupId=com.csc.muthur
+projectKey=com.csc.muthur\:com.csc.muthur.server.registration
+serverUrl=http\://localhost\:9000
+version=2

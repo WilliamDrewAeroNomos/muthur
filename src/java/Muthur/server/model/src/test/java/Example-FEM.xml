@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fems>
+	<fedExecModel>
+		<femName>Frasca NexSim integration</femName>
+		<description>Federation of the NexSim ATC and Frasca flight
+			simulators
+		</description>
+		<fedExecModelUUID>cdf76060-bcaa-4f3a-8f55-5913ecc7bd60
+		</fedExecModelUUID>
+		<durationFederationExecutionMSecs>120000
+		</durationFederationExecutionMSecs>
+		<durationJoinFederationMSecs>30000</durationJoinFederationMSecs>
+		<durationRegisterPublicationMSecs>31000
+		</durationRegisterPublicationMSecs>
+		<durationRegisterSubscriptionMSecs>32000
+		</durationRegisterSubscriptionMSecs>
+		<durationRegisterToRunMSecs>33000</durationRegisterToRunMSecs>
+		<durationTimeToWaitAfterTermination>34000
+		</durationTimeToWaitAfterTermination>
+		<fedExecModelLogicalStartTimeMSecs>1306671242322
+		</fedExecModelLogicalStartTimeMSecs>
+		<requiredFederates>
+			<requiredFederate>NexSim</requiredFederate>
+			<requiredFederate>Frasca</requiredFederate>
+		</requiredFederates>
+	</fedExecModel>
+	<fedExecModel>
+		<femName>Default FEM</femName>
+		<description>This is the default FEM</description>
+		<fedExecModelUUID>943cecf3-fce1-4f32-9c9d-5a48722b4032
+		</fedExecModelUUID>
+		<fedExecModelLogicalStartTimeMSecs>0
+		</fedExecModelLogicalStartTimeMSecs>
+		<requiredFederates />
+	</fedExecModel>
+</fems>
+
+

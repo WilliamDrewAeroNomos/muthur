@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- regular spring configuration file defining the beans for this bundle. 
+		The configuration of OSGi definitions is kept in a separate configuration 
+		file so that this file can easily be used for integration testing outside 
+		of an OSGi environment -->
+
+	<!-- CreateObjectRequest -->
+
+	<bean name="CreateObjectRequest"
+		class="com.csc.muthur.server.model.event.request.CreateObjectRequest"
+		scope="prototype">
+	</bean>
+
+	<!-- ReadObjectRequest -->
+
+	<bean name="ReadObjectRequest"
+		class="com.csc.muthur.server.model.event.request.ReadObjectRequest"
+		scope="prototype">
+	</bean>
+
+	<!-- UpdateObjectRequest -->
+
+	<bean name="UpdateObjectRequest"
+		class="com.csc.muthur.server.model.event.request.UpdateObjectRequest"
+		scope="prototype">
+	</bean>
+
+	<!-- DeleteObjectRequest -->
+
+	<bean name="DeleteObjectRequest"
+		class="com.csc.muthur.server.model.event.request.DeleteObjectRequest"
+		scope="prototype">
+	</bean>
+
+	<!-- Ownership -->
+
+	<bean name="ObjectOwnershipRelinquishedEvent"
+		class="com.csc.muthur.server.model.event.ObjectOwnershipRelinquishedEvent"
+		scope="prototype">
+	</bean>
+
+	<bean name="RelinquishObjectOwnershipRequest"
+		class="com.csc.muthur.server.model.event.request.RelinquishObjectOwnershipRequest"
+		scope="prototype">
+	</bean>
+
+	<bean name="RelinquishObjectOwnershipResponse"
+		class="com.csc.muthur.server.model.event.response.RelinquishObjectOwnershipResponse"
+		scope="prototype">
+	</bean>
+
+	<bean name="TransferObjectOwnershipRequest"
+		class="com.csc.muthur.server.model.event.request.TransferObjectOwnershipRequest"
+		scope="prototype">
+	</bean>
+
+	<bean name="TransferObjectOwnershipResponse"
+		class="com.csc.muthur.server.model.event.response.TransferObjectOwnershipResponse"
+		scope="prototype">
+	</bean>
+
+	<bean name="UpdateObjectAccessControlRequest"
+		class="com.csc.muthur.server.model.event.request.UpdateObjectAccessControlRequest"
+		scope="prototype">
+	</bean>
+
+	<!-- General error response used to cover all errors not covered by standard 
+		event error handling -->
+
+	<bean name="GeneralErrorResponse"
+		class="com.csc.muthur.server.model.event.response.GeneralErrorResponse"
+		scope="prototype">
+	</bean>
+
+</beans>

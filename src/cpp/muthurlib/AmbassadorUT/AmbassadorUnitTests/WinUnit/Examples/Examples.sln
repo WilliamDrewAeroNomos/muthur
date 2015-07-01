@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SampleLib", "SampleLib\SampleLib.vcproj", "{0516A970-A320-4ECA-8647-001B09C2CC3A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SampleLogger", "SampleLogger\SampleLogger.vcproj", "{F3ED186C-08F9-4428-B1A6-A7E2BCDD0A68}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestSampleLib", "TestSampleLib\TestSampleLib.vcproj", "{7CA77469-3A1D-46DE-9DF2-C72EE4F15500}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0516A970-A320-4ECA-8647-001B09C2CC3A} = {0516A970-A320-4ECA-8647-001B09C2CC3A}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D0988660-4577-4C0F-982C-C6384BE5B7A8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Include", "Include", "{2DC6E875-CDD5-4662-8578-453A9F88E9F9}"
+	ProjectSection(SolutionItems) = preProject
+		..\Include\WinUnit.h = ..\Include\WinUnit.h
+		..\Include\WinUnitLogger.h = ..\Include\WinUnitLogger.h
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0516A970-A320-4ECA-8647-001B09C2CC3A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0516A970-A320-4ECA-8647-001B09C2CC3A}.Debug|Win32.Build.0 = Debug|Win32
+		{0516A970-A320-4ECA-8647-001B09C2CC3A}.Debug|x64.ActiveCfg = Debug|x64
+		{0516A970-A320-4ECA-8647-001B09C2CC3A}.Debug|x64.Build.0 = Debug|x64
+		{0516A970-A320-4ECA-8647-001B09C2CC3A}.Release|Win32.ActiveCfg = Release|Win32
+		{0516A970-A320-4ECA-8647-001B09C2CC3A}.Release|Win32.Build.0 = Release|Win32
+		{0516A970-A320-4ECA-8647-001B09C2CC3A}.Release|x64.ActiveCfg = Release|x64
+		{0516A970-A320-4ECA-8647-001B09C2CC3A}.Release|x64.Build.0 = Release|x64
+		{F3ED186C-08F9-4428-B1A6-A7E2BCDD0A68}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F3ED186C-08F9-4428-B1A6-A7E2BCDD0A68}.Debug|Win32.Build.0 = Debug|Win32
+		{F3ED186C-08F9-4428-B1A6-A7E2BCDD0A68}.Debug|x64.ActiveCfg = Debug|x64
+		{F3ED186C-08F9-4428-B1A6-A7E2BCDD0A68}.Debug|x64.Build.0 = Debug|x64
+		{F3ED186C-08F9-4428-B1A6-A7E2BCDD0A68}.Release|Win32.ActiveCfg = Release|Win32
+		{F3ED186C-08F9-4428-B1A6-A7E2BCDD0A68}.Release|Win32.Build.0 = Release|Win32
+		{F3ED186C-08F9-4428-B1A6-A7E2BCDD0A68}.Release|x64.ActiveCfg = Release|x64
+		{F3ED186C-08F9-4428-B1A6-A7E2BCDD0A68}.Release|x64.Build.0 = Release|x64
+		{7CA77469-3A1D-46DE-9DF2-C72EE4F15500}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7CA77469-3A1D-46DE-9DF2-C72EE4F15500}.Debug|Win32.Build.0 = Debug|Win32
+		{7CA77469-3A1D-46DE-9DF2-C72EE4F15500}.Debug|x64.ActiveCfg = Debug|x64
+		{7CA77469-3A1D-46DE-9DF2-C72EE4F15500}.Debug|x64.Build.0 = Debug|x64
+		{7CA77469-3A1D-46DE-9DF2-C72EE4F15500}.Release|Win32.ActiveCfg = Release|Win32
+		{7CA77469-3A1D-46DE-9DF2-C72EE4F15500}.Release|Win32.Build.0 = Release|Win32
+		{7CA77469-3A1D-46DE-9DF2-C72EE4F15500}.Release|x64.ActiveCfg = Release|x64
+		{7CA77469-3A1D-46DE-9DF2-C72EE4F15500}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2DC6E875-CDD5-4662-8578-453A9F88E9F9} = {D0988660-4577-4C0F-982C-C6384BE5B7A8}
+	EndGlobalSection
+EndGlobal
